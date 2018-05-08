@@ -1,0 +1,24 @@
+syntax: glob
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+
+# JetBrains
+.idea
+
+
+# Data files
+temp/
+*.txt
+*_sorted
+/big20gb
+/medium
+
+
+# Temp files
+*.log
+*.tmp
+~$*.docx
+~$*.doc
