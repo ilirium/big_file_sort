@@ -1,20 +1,15 @@
-# Несколько стратегий сортировки большого файла, непомещяющегося в RAM
+# Several strategies for sorting a large file that does not fit in RAM
 
-## Чтение и запись блоками
-Читаем в память блок из файла, сортируем числа по вспомогательным
-спискам. Записываем полученные вспомогательные списки в соответствующие
-вспомогательные файлы. Повторяем чтение и запись до тех пор, пока не
-считаем все числа из входного файлам. Загружаем поочереди каждый
-вспомогательный файл, выполняем сортировку, записываем отсортированный
-массив чисел в выходной файл в конец.
+## Block-based reading and writing
+Read a block of numbers from the file into memory and sort them into auxiliary lists. Write these auxiliary lists to corresponding temporary files. Repeat this read-and-write process until all numbers from the input file have been processed. Then, load each temporary file one by one, sort its contents, and append the sorted array of numbers to the output file.
 
-### Предварительная сортировка
-Перед записью вспомогательного списка выполнить его сортировку.
+### Pre-sorting
+Sort the auxiliary list before writing it to a file.
 
-Возможно, это ускорит полную сортировку вспомогательного файла.
+This may speed up the subsequent sorting of the temporary file.
 
-## Чтение и запись по строкам
-Читать по строкам, писать по строкам.
+## Line-based reading and writing
+Read line by line, write line by line.
 
-## Чтение по строкам, запись по блокам
-Читать по строкам, писать по блокам.
+## Line-based reading, block-based writing
+Read line by line, write in blocks.
